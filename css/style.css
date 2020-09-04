@@ -68,7 +68,7 @@ body {
 .header {
   height: 7rem;
   background-color: var(--color-white);
-  border-bottom: var(--color-grey-light-2);
+  border-bottom: 1px solid var(--color-grey-light-2);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -97,7 +97,7 @@ body {
     border-radius: 100px;
     padding: 0.7rem 2rem;
     margin-right: -3rem;
-    transition: all 0.3 ease; }
+    transition: all 0.3s ease; }
     .search__input:focus {
       outline: none;
       width: 100%;
@@ -159,8 +159,56 @@ body {
 
 .sidebar {
   background-color: var(--color-grey-dark-1);
-  flex: 0 0 18%; }
+  flex: 0 0 18%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between; }
+
+.side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem; }
+  .side-nav__item {
+    position: relative; }
+    .side-nav__item:not(:last-child) {
+      margin-bottom: 0.5rem; }
+  .side-nav__item::before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transition: transform 0.2s ease, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s ease-out; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: var(--color-primary-light); }
+  .side-nav__link:link, .side-nav__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10; }
+  .side-nav__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    fill: currentColor; }
+
+.legal {
+  font-size: 1.2rem;
+  color: var(--color-grey-light-4);
+  text-align: center;
+  padding: 1rem; }
 
 .hotel-view {
   background-color: var(--color-white);
-  flex: 1; }
+  flex: 1;
+  height: 80rem; }
