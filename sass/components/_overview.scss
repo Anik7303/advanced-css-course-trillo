@@ -4,16 +4,35 @@
     align-items: center;
     border-bottom: var(--line);
 
+    @include respond(extra-small) {
+        flex-wrap: wrap;
+    }
+
     &__heading {
         font-size: 2.25rem;
         font-weight: 400;
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @include respond(small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
+
+        @include respond(extra-small) {
+            order: 1;
+            flex: 0 0 60%;
+        }
     }
 
     &__stars {
         display: flex;
+
+        @include respond(extra-small) {
+            order: 3;
+            margin-left: 2rem;
+        }
     }
 
     &__icon-star,
@@ -28,6 +47,10 @@
         font-size: 1.2rem;
         display: flex;
         align-items: center;
+
+        @include respond(extra-small) {
+            order: 2;
+        }
     }
 
     &__icon-location {
@@ -46,13 +69,30 @@
         justify-content: center;
         align-items: center;
 
+        @include respond(small) {
+            padding: 0 1.5rem;
+        }
+
+        @include respond(extra-small) {
+            order: 4;
+            margin-left: auto;
+        }
+
         &-avg {
             font-size: 2.25rem;
             margin-bottom: -3px;
+
+            @include respond(small) {
+                font-size: 1.8rem;
+            }
         }
 
         &-count {
             font-size: 1rem;
+
+            @include respond(small) {
+                font-size: 0.8rem;
+            }
         }
     }
 }

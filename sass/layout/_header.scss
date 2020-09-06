@@ -8,6 +8,12 @@
     justify-content: space-between;
     align-items: center;
 
+    @include respond(smallest) {
+        height: 11rem;
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+
     &__logo-box {
         height: 3.25rem;
         margin-left: 2rem;
@@ -27,6 +33,11 @@
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+
+    @include respond(smallest) {
+        order: 1;
+        flex: 1 0 100%;
+    }
 
     &__input {
         width: 90%;
@@ -56,6 +67,7 @@
         border: none;
         background-color: var(--color-grey-light-2);
         cursor: pointer;
+        display: flex;
 
         &:focus {
             outline: none;
@@ -116,6 +128,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include respond(smallest) {
+            top: 0;
+        }
     }
 
     &__user {

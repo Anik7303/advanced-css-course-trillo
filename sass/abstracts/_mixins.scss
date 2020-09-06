@@ -1,0 +1,56 @@
+/*
+MEDIA QUERY MANAGER
+
+$breakpoins:
+
+1200px largest
+1100px large
+900px medium
+650px / 600px small
+500px smallest
+450px extra-small
+
+*/
+
+@mixin respond($breakpoint) {
+    @if ($breakpoint == largest) {
+        @media only screen and (max-width: 75em) {
+            // 1200px = 1200/16 = 75
+            @content;
+        }
+    }
+    @if ($breakpoint == large) {
+        @media only screen and (max-width: 68.75em) {
+            // 1100px = 1100/16 = 68.75
+            @content;
+        }
+    }
+    @if ($breakpoint == medium) {
+        @media only screen and (max-width: 56.25em) {
+            // 900px = 900/16 = 56.25
+            @content;
+        }
+    }
+    @if ($breakpoint == small) {
+        @media only screen and (max-width: 40.625em) {
+            // 650px = 650/16 = 40.625
+            @content;
+        }
+        // @media only screen and (max-width: 37.5em) {
+        //     // 600px = 600/16 = 37.5
+        //     @content;
+        // }
+    }
+    @if ($breakpoint == smallest) {
+        @media only screen and (max-width: 31.25em) {
+            // 500px = 500/16 = 31.25
+            @content;
+        }
+    }
+    @if ($breakpoint == extra-small) {
+        @media only screen and (max-width: 28.125em) {
+            // 450px = 450/16 = 28.125
+            @content;
+        }
+    }
+}

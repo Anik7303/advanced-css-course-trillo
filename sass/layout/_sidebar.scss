@@ -12,11 +12,26 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @include respond(medium) {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin: 0;
+    }
+
     &__item {
         position: relative;
 
         &:not(:last-child) {
             margin-bottom: 0.5rem;
+
+            @include respond(medium) {
+                margin-bottom: 0;
+            }
+        }
+
+        @include respond(medium) {
+            flex: 1;
         }
     }
 
@@ -29,8 +44,7 @@
         width: 3px;
         background-color: var(--color-primary);
         transform: scaleY(0);
-        transition: transform 0.2s ease,
-            width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+        transition: transform 0.2s ease, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
             background-color 0.1s ease-out;
     }
 
@@ -57,6 +71,20 @@
 
             position: relative;
             z-index: 10;
+
+            @include respond(medium) {
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+            }
+
+            @include respond(small) {
+                padding: 1.5rem 0.5rem;
+            }
+
+            @include respond(smallest) {
+                padding: 0.9rem 0.5rem;
+            }
         }
     }
 
@@ -65,6 +93,20 @@
         height: 1.75rem;
         margin-right: 2rem;
         fill: currentColor;
+
+        @include respond(medium) {
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        @include respond(small) {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        @include respond(smallest) {
+            margin-bottom: 2px;
+        }
     }
 }
 
@@ -73,4 +115,8 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 1rem;
+
+    @include respond(medium) {
+        display: none;
+    }
 }

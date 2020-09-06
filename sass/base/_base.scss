@@ -12,6 +12,11 @@
 html {
     font-size: 62.5%; // 1rem = 10px; 10/16 = .625
     box-sizing: border-box;
+
+    @include respond(large) {
+        // 1rem = 8px; 8/16 = .5
+        font-size: 50%;
+    }
 }
 
 body {
